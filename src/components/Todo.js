@@ -29,10 +29,10 @@ function Todo({todos, completeTodo, removeTodo, updateTodo}) {
         value: ...
     });
 
-//TODO PROPERTY: submitUpdate
+//TODO: create submitUpdate, call updateTodo
 //when we've entered our task and submitted them, we set id and value back to nothing
 
-    const submitUpdate = value => {
+    const ... = value => {
         updateTodo(..., ...);
         
         setEdit({

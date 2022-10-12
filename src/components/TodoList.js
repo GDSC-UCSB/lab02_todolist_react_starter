@@ -1,82 +1,100 @@
 import React, {useState} from 'react';
-import TodoForm from './TodoForm';
-import Todo from './Todo';
 
-/*TodoList will contain all of the functions that we can do with our 
+/*************** CODE STARTS BELOW *******************************************
+TodoList will contain all of the functions that we can do with our 
 tasks. It will use components Todo and TodoForm to create the entire Task
-List that is seen in our webpage   ***********************************/
+List that is seen in our webpage
 
-function TodoList() {
+//IMPORTANT: UNCOMMENT THE CHUNK OF CODE BELOW AND START WORKING FROM HERE ***
+//INSTRUCTIONS: FILL IN ALL THE PARTS LABELED '...'
+*******************************************************************************
 
-    //var todos, function setTodos uses hook: useState()
-    const [todos, setTodos] = useState([]);
+... //import neccessary component files (STH.js)
 
-    //function responsible for creating a task to add to our list
-    const addTodo = todo => {
+function ... () {
+
+//var todos, function setTodos uses hook: useState()
+    ... [... , ...] = ...([]);
+
+//function addTodo responsible for creating a task to add to our list
+//takes in variable 'todo'
+    ... ... = ... => {
         
-        //if we entered an empty string or nothing at all, then
-        //our task list should not be updated
-        if(!todo.text || /^\s*$/.test(todo.text)){
+    //if we entered an empty string or nothing at all, then
+    //our task list should not be updated
+        
+        if(!... || /^\s*$/.test(...)){
             return; //returns nothing
         }
-        //newTodos stores array of all task items that we type in
-        const newTodos = [todo, ...todos];
+
+    //newTodos stores array of all task items that we type in
+    ... ... = [todo, ...todos];
         
-        //setTodos will then take in newTodos and update the webpage
-        //to show our new added tasks
-        setTodos(newTodos);
+    //call function that takes in newTodos and updates the webpage
+    to show our new added tasks
+        ... (...);
     };
 
-    //updateTodo is responsible for updating our tasks
-    const updateTodo = (todoId, newValue) => {
+//updateTodo is responsible for updating our tasks, takes in args: todoId, newValue
+    ... {
 
-        //if we entered an empty string or nothing at all, then
-        //our task list should not be updated
-        if(! newValue.text || /^\s*$/.test(newValue.text)){
-            return;
-        }
-        //calls back each item on our task array that's on the webpage,
-        // if they find the matching one we want to update, it will update that
-        // section of the array and update our webpage task list
-        setTodos(prev => prev.map(item => (item.id === todoId ? newValue:item)));
+    //if we entered an empty string or nothing at all, then
+    //our task list should not be updated (hint: similar to what we did in addTodo())
+        if(...){  return; }
+
+    //calls back each item on our task array that's on the webpage,
+    // if they find the matching one we want to update, it will update that
+    // section of the array and update our webpage task list
+        
+        ... (prev => prev.map(item => (item.id === ... ? newValue: ...)));
     };
 
-    //removeTodo is responsible for deleting items on our task list
-    const removeTodo = id => {
-        //looks through current array of tasks and returns the array that
-        //doesn't contain the task we want to delete
-        const removeArr = [...todos].filter(todo => todo.id !== id)
+//removeTodo is responsible for deleting items on our task list, needs task id to do so
 
-        //updates the webpage of our updated task list
-        setTodos(removeArr);
+    ... {
+
+    //looks through current array of tasks and saves the array that
+    //doesn't contain the task we want to delete into removeArr
+
+        ... ... = [...todos].filter(todo => ... !== ...)
+
+    //updates the webpage of our updated task array
+        ...
     };
 
-    //competeTodo is responsible for showing that we 'completed' a task
-    //when we press on the task (which indicate that we've completed the task)
-    const completeTodo = id => {
+//competeTodo is responsible for showing that we 'completed' a task
+//when we press on the task (which indicate that we've completed the task)
+    
+    ... {
 
-        //looks through current todo items, if we've found the one we clicked on
-        //it will change the status of isComplete and return results in updatedTodos
-        let updatedTodos = todos.map(todo => {
-            if(todo.id === id){
-                todo.isComplete = !todo.isComplete;
+    //looks through current todo items, if we've found the one we clicked on
+    //it will change the status of isComplete and return results to var updatedTodos
+        
+        let ... = todos.map(todo => {
+            if(...){
+                ... = ! ...;
             }
-            return todo;
+            return ...;
         });
-        //updates webpage
-        setTodos(updatedTodos);
+
+    //updates webpage
+        ...
+
     };
 
     return (
         <div>
             <h1>why are you stressed today?</h1>
-            <TodoForm onSubmit={addTodo}/> {/* when we add task */}
-            <Todo todos={todos} // displays task items
-            completeTodo={completeTodo} // when complete task
-            removeTodo={removeTodo} //when we remove task
-            updateTodo={updateTodo}/> {/* when we update task */}
+            <TodoForm onSubmit={...}/> // when we add task
+            <Todo
+            ... = ...           // displays task items
+            ...                 // when complete task
+            ...                 //when we remove task
+            ...     />          //when we update task
         </div>
     );
 }
 
-export default TodoList
+... // this statement allows you to use this function in other files
+
+**************************************************************/

@@ -1,14 +1,24 @@
 import React, {useState, useEffect, useRef} from 'react'
 
+
+/*************** CODE STARTS BELOW *******************************************
+//IMPORTANT: UNCOMMENT THE CHUNK OF CODE BELOW AND START WORKING FROM HERE ***
+//INSTRUCTIONS: FILL IN ALL THE PARTS LABELED '...'
+*******************************************************************************
+
+
 function TodoForm(props) {
-                                    //if we don't have lines below, then when updating the value
-                                    //you will not have your current value appear in the text box
-  const [input, setInput] = useState(props.edit ? props.edit.value : '');
-  // useRef(): this hook allows you to focus on whatever you put as 'ref'
-  const inputRef = useRef(null);
 
+//when updating the value, we want to still have our current string (aka task) appear 
+    in the text box to edit, instead of no string in text box after clicking 'edit'
+    call the correct 'hook' (hint: we've used this in Todo.js)
+  
+    const [input, setInput] = ...(props.edit ? props.edit.value : '');
+  
+// useRef(): this hook allows you to focus on whatever you put as 'ref'
+    const inputRef = useRef(null);
 
-  //useEffect allows you to perform side effects in function components
+//useEffect allows you to perform side effects in function components
   useEffect(() => {
     //focus on the current this task
     inputRef.current.focus();
@@ -17,60 +27,73 @@ function TodoForm(props) {
 
   //function to update your todo list items
   const handleChange = e => {
-    //updates your task
-    setInput(e.target.value);
+    
+    //updates your task ( hint: call set...() )
+    ...(...);
+
   };
 
   //function to handle the 'submit' button to add task
   const handleSubmit = e => {
       e.preventDefault();
-      //creates a random id to store your task in ;'id', 
-      //and saves your task in 'text'
-      props.onSubmit({
-          id: Math.floor(Math.random() * 10000), 
-          text: input
+
+    //creates a RANDOM id to store your task in ;'id', 
+    //and saves your task (input) in 'text' WHEN you 
+    //'submit' your button
+      
+      props....({
+          id: ... 
+          text: ...
       });
-      //resets input to empty string
-      setInput('');
+
+    //call the function to reset input to empty string
+      ...(...);
   };
 
 
-
   return (
-    //when submitting task, calls handleSubmit function
-    <form className='todo-form' onSubmit={handleSubmit}>
+    //when submitting task, calls correct function from TodoForm.js
+    <form className='todo-form' onSubmit={...}>
 
-            {/* to check whether we need to display the update form or the add task form --> */}
+        //to check whether we need to display the update form or the add task form, 
+        we need to create a conditional, both outcomes display similar stuff, but there
+        are differences --> hint: BUTTONS
+            
             {props.edit ? (
             <>
               <input 
               type='text' 
-              placeholder='Update Task' //default placeholder in your text box
-              value={input} //saves your input into the variable 'value'
+              placeholder='Update Task' //default placeholder 4 text box
+              value={...} //saves your input into the variable 'value'
               name='text' 
               className='todo-input'
-              onChange={handleChange} //if you update your task, calls handleChange function
+              onChange={...} //if you update your task, calls correct function
               ref={inputRef} //calls inputRef when your text cursor is 'focused' on this specific task
             />
             <button className='todo-button edit'>update</button>
             </>
-          ) : (
-            <>
-              <input 
-                type='text' 
-                placeholder='type to relieve your stress...' //default placeholder in your text box
-                value={input} //saves your input into the variable 'value'
-                name='text' 
-                className='todo-input'
-                onChange={handleChange} //if you update your task, calls handleChange function
-                ref={inputRef} //calls inputRef when your text cursor is 'focused' on this specific task
+
+          ) : ( 
+
+            <> //based on what you saw from the first outcome above, fill in the rest here
+              <... 
+                ... = '...' 
+                ... = '...' //placeholder
+                ... ={...} //save input
+                ... = '...' 
+                ... ='todo-input'
+                ... = {...} //if you update task, calls correct function
+                ... = {...} //input Ref
               />
-          {/* the submit button */}
-          <button className='todo-button'>submit</button> 
+
+        //the submit button
+          <... ...='...'>...</...> 
           </>
           )}
           
     </form>
   )
 }
-export default TodoForm //allows you to use this function in other files
+... // this statement allows you to use this function in other files
+
+*/
