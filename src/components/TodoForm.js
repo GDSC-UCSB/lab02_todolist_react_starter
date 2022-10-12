@@ -73,5 +73,4 @@ function TodoForm(props) {
     </form>
   )
 }
-
 export default TodoForm //allows you to use this function in other files
