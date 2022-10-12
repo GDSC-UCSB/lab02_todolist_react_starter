@@ -1,0 +1,121 @@
+@import url('https://fonts.google.com/specimen/Open+Sans?query=open');
+
+* {
+    box-sizing: border-box;
+    margin: 0px;
+    padding: 0px;
+    font-family: sans-serif;
+}
+
+body {
+    background: linear-gradient(
+            #bf2419 0%,
+            #e78018 100%);
+}
+
+.todo-app {
+    display: flex;
+    flex-direction: column;
+    justify-content: flex-start;
+    width: 600px;
+    min-height: 600px;
+    background: #1d0200;
+    text-align: center;
+    margin: 128px auto;
+    border-radius: 50px;
+    padding-bottom: 32px;
+}
+
+h1 {
+    margin: 50px 0;
+    color: #bf2419;
+    font-size: 30px;
+}
+
+.complete {
+    text-decoration: line-through;
+    color:#bf2419;
+    opacity: 0.4;
+}
+
+.todo-form {
+    margin-bottom: 33px;
+}
+
+.todo-input {
+    padding: 14px 32px 14px 16px;
+    border-radius: 10px 0 0 10px;
+    border: 2px solid #bf2419;
+    outline: none;
+    width: 400px;
+    font-size: auto;
+    background: transparent;
+    color: #f6b471;
+}
+
+.todo-input::placeholder {
+    color: #f6b471;
+    font-size: auto;
+}
+
+.todo-button {
+    padding: 16px;
+    border: none;
+    border-radius: 0 10px 10px 0;
+    cursor: pointer;
+    outline: none;
+    background: #bf2419;
+    font-weight: bold;
+    color: #f6b471;
+}
+
+.todo-input.edit {
+    border: 10px solid #f6b471;
+    width: 400px;
+}
+
+.todo-button.edit {
+    background: #bf2419;
+    padding: 16px;
+    
+}
+
+.todo-container {
+    display: flex;
+    flex-direction: row;
+    position: relative;
+}
+
+.todo-row {
+    display: flex;
+    justify-content: space-between;
+    cursor: pointer;
+    align-items: center;
+    margin: 10px auto;
+    color: #1d0200;
+    background: #e78018;
+    text-transform: lowercase;
+    letter-spacing: 0.1px;
+    padding: 16px;
+    padding-left: 20px;
+    border-radius: 20px;
+    font-size: auto;
+    width: 81%;
+}
+
+.icons {
+    display: flex;
+    align-items: center;
+    font-size: 24px;
+    cursor: pointer;
+}
+
+.delete-icon {
+    margin-right: 5px;
+    color: #1d0200;
+}
+
+.edit-icon {
+    color: #1d0200;
+    margin-right: 5px;
+}
