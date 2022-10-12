@@ -28,7 +28,7 @@ function ... () {
         }
 
     //newTodos stores array of all task items that we type in
-    ... ... = [todo, ...todos];
+    ... ... = [todo, ...todos]; <-- you don't need to replace anything for the following part of this line: "...todo" 
         
     //call function that takes in newTodos and updates the webpage
     to show our new added tasks
@@ -56,7 +56,7 @@ function ... () {
     //looks through current array of tasks and saves the array that
     //doesn't contain the task we want to delete into removeArr
 
-        ... ... = [...todos].filter(todo => ... !== ...)
+        ... ... = [...todos].filter(todo => ... !== ...) <-- you don't need to replace anything for the following part of this line: "...todo" 
 
     //updates the webpage of our updated task array
         ...
