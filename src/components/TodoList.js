@@ -56,7 +56,7 @@ function ... () {
     //looks through current array of tasks and saves the array that
     //doesn't contain the task we want to delete into removeArr
 
-        ... ... = [...todos].filter(todo => ... !== ...) <-- you don't need to replace anything for the following part of this line: "...todo" 
+        ... ... = [...todos].filter(todo => ... !== ...) <-- you don't need to replace anything for the following part of this line: "...todos" 
 
     //updates the webpage of our updated task array
         ...
